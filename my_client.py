@@ -1,7 +1,12 @@
 import asyncio
 from fastmcp import Client
+from dotenv import load_dotenv
+import os
 
-client = Client("http://localhost:8000/mcp")
+load_dotenv()
+AUTH_TOKEN = os.getenv("AUTH_TOKEN")
+
+client = Client("https://sure-amethyst-turkey.fastmcp.app/mcp")
 
 async def call_tools(name: str):
     async with client:
